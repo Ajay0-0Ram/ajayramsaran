@@ -1,0 +1,152 @@
+html {
+  zoom: 1.25; /* 125% */
+}
+
+strong{
+  font-weight: 800;
+  text-shadow: 0 0 5px #07abfa, 0 0 10px #97f3ff;
+}
+
+/*Fly In Animations*/
+@keyframes fly-r {
+        from {
+          opacity: 0;
+          transform: translateX(200px);}
+        to {
+          opacity: 1;
+          transform: translateX(0);}
+      }
+
+      .fly-r {
+        animation: fly-r 1s ease-out both;
+      }
+
+@keyframes fly-l {
+        from {
+          opacity: 0;
+          transform: translateX(-200px);}
+        to {
+          opacity: 1;
+          transform: translateX(0);}
+      }
+
+      .fly-l {
+        animation: fly-l 1s ease-out both;
+      }
+
+@keyframes fly-u {
+        from {
+          opacity: 0;
+          transform: translateY(200px);}
+        to {
+          opacity: 1;
+          transform: translateY(0);}
+      }
+
+      .fly-u {
+        animation: fly-u 1s ease-out both;
+      }
+
+@keyframes fly-d {
+        from {
+          opacity: 0;
+          transform: translateY(-200px);}
+        to {
+          opacity: 1;
+          transform: translateY(0);}
+      }
+
+      .fly-d {
+        animation: fly-d 1s ease-out both;
+      }
+
+/*Dropdown Animation*/
+.hidden-section {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.hidden-section.show {
+  max-height: 1000px; /* large enough to fit content */
+}
+
+
+/* Roulette */
+.roulette {
+  overflow-x: hidden; /* prevent horizontal scroll */
+  overflow-y: visible;
+  perspective: 1000px; /* gives 3D depth */
+}
+
+#wheel {
+  position: relative; 
+  width: 800px;      
+  height: 200px;      
+  margin: 0 auto;    
+}
+
+.item {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  text-align: center;
+  color: white;
+}
+
+.item img {
+  width: 100px;
+  height: auto;
+  object-fit: contain; /* resize instead of crop */
+  border-radius: 12px;
+}
+
+.item p {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}
+
+/*Widgets*/
+.slant-r {
+clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 0, 75% 100%, 20% 100%, 0 100%, 0 0);
+}
+.slant-l {
+clip-path: polygon(50% 0, 100% 0, 100% 100%, 100% 0, 100% 100%, 20% 100%, 0 100%, 25% 0);
+}
+
+
+
+/* Neon Glow */
+.glow {
+  text-shadow:
+    0 0 5px #2164bf,
+    0 0 10px #07abfa,
+    0 0 20px #97f3ff;
+}
+.glowButton {
+  box-shadow:
+    0 0 5px #2164bf,
+    0 0 10px #07abfa,
+    0 0 20px #97f3ff;
+}
+
+/*Delays*/
+.delay-2 {animation-delay: 2s;}
+/* When AOS triggers .aos-animate, apply your custom fly animation */
+[data-aos="fly-r"].aos-animate {
+  animation: fly-r 1s ease-out both;
+}
+[data-aos="fly-u"].aos-animate {
+  animation: fly-u 1s ease-out both;
+}
+[data-aos="fly-l"].aos-animate {
+  animation: fly-l 1s ease-out both;
+}
+[data-aos="fly-d"].aos-animate {
+  animation: fly-d 1s ease-out both;
+}
+
+
+

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Ajay Ramsaran
+        </title>
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+        <link href="animations.css" rel="stylesheet">
+
+    </head>
+
+    <body class="bg-[#081528] text-white overflow-x-hidden font-['JetBrains_Mono']">
+        <!-- HERO -->
+        <div id="hero" class="grid grid-cols-1 md:grid-cols-2 py-20 md:py-40 mb-16 gap-8 bg-[url('hero.png')] bg-cover bg-center">
+
+        <!-- Column 1: Name -->
+        <div class="flex flex-col items-center">
+            <h1 class="text-5xl sm:text-6xl md:text-8xl">
+                <span id="typed-name"></span>
+            </h1>
+            <div class ="flex justify-evenly flex-wrap">
+                <h2 class="text-xl sm:text-2xl md:text-3xl mt-4 fly-l delay-2">-</h2>  
+                <h2 class="text-xl sm:text-2xl md:text-3xl mt-4 fly-u delay-2 mx-2">Software Engineer</h2>
+                <h2 class="text-xl sm:text-2xl md:text-3xl mt-4 fly-r delay-2">-</h2>
+            </div>
+        </div>
+
+        <!-- Column 2: Picture -->
+        <div class="flex justify-center items-start">
+            <img class= "w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 fly-r" src="profile.png">
+        </div>
+
+        </div>
+
+        <!--NAVIGATION-->
+        <nav id="stickyNav" 
+            class="fixed top-0 left-0 w-full bg-[#021d45]/90 backdrop-blur-md shadow-md py-4 
+                    opacity-0 pointer-events-none transition-opacity duration-500 z-50">
+        <div class="grid grid-cols-3 items-center w-full px-6">
+            <!-- Left: Hamburger -->
+            <button id="menuToggle" class="text-[#b2f8ff] text-3xl justify-self-start">
+                ☰
+            </button>
+
+            <!-- Center: Name -->
+            <a href="#hero" class="text-xl sm:text-2xl font-bold text-white justify-self-center">
+                Ajay Ramsaran
+            </a>
+
+            <!-- Right: Resume Button -->
+            <a href="ajay%20ramsaran.pdf" target="_blank"
+                class="border-2 border-[#b2f8ff] text-[#b2f8ff] glowButton text-sm sm:text-base md:text-lg font-bold px-4 py-2 rounded-lg transition justify-self-end transition hover:bg-[#b2f8ff] hover:text-[#081528]">
+                Resume
+            </a>
+        </div>
+
+
+        <!-- Dropdown menu (hidden until toggled) -->
+        <ul id="navMenu" 
+            class="max-h-0 overflow-hidden flex-col space-y-4 mt-3 text-center font-bold text-[#b2f8ff]
+                transition-[max-height] duration-500 ease-in-out">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#academics">Academia</a></li>
+        <li><a href="#works">Work Experience</a></li>
+        </ul>
+        </nav>
+
+        <!-- SKILLS ROULETTE -->
+        <div id="skills" class="scroll-mt-24 roulette relative mb-32">
+            <div class ="col-span-7 flex-col items-center text-center">
+                <h2 data-aos="fly-d" data-aos-delay="500" class="text-2xl sm:text-3xl mb-0 opacity-0">My Skill Set</h2>
+                <p id="skillMessage" class="opacity-0" data-aos="fly-u" data-aos-delay="500">(hover to speed up)</p>
+             
+            </div>
+            <div id="wheel" data-aos="fly-u" data-aos-delay="500" class="relative w-full h-48 opacity-0 overflow-hidden">
+                <div class="item"><img src="logos/cms.png"><p>CMS</p></div>
+                <div class="item"><img src="logos/cpp.png"><p>C++</p></div>
+                <div class="item"><img src="logos/css.png"><p>CSS</p></div>
+                <div class="item"><img src="logos/github.png"><p>GitHub</p></div>
+                <div class="item"><img src="logos/html.png"><p>HTML</p></div>
+                <div class="item"><img src="logos/java.png"><p>Java</p></div>
+                <div class="item"><img src="logos/javascript.png"><p>JavaScript</p></div>
+                <div class="item"><img src="logos/mysql.png"><p>MySQL</p></div>
+                <div class="item"><img src="logos/nodejs.png"><p>Node.js</p></div>
+                <div class="item"><img src="logos/php.png"><p>PHP</p></div>
+                <div class="item"><img src="logos/python.png"><p>Python</p></div>
+                <div class="item"><img src="logos/react.png"><p>React</p></div>
+                <div class="item"><img src="logos/soap.png"><p>SOAP API</p></div>
+                <div class="item"><img src="logos/tailwind.png"><p>Tailwind CSS</p></div>
+                <div class="item"><img src="logos/vite.png"><p>Vite</p></div>
+            </div>
+        </div>
+
+        <!--CHECK ME OUT-->
+        <div class="grid grid-cols-1 md:grid-cols-7 gap-y-12">
+            <div class ="col-span-7 flex-col items-center text-center">
+                <h2 data-aos="fly-d" data-aos-delay="500" class="text-2xl sm:text-3xl mb-0 opacity-0">Check Me Out</h2>
+                <p class="opacity-0" data-aos="fly-u" data-aos-delay="500">(click to expand each section)</p>
+            </div>
+
+            <!-- Projects Button -->
+            <div data-aos="fly-l" data-aos-delay="500" id="projects" class="scroll-mt-24 col-span-6 bg-[#021d45] p-2 md:pr-80 slant-r flex justify-between opacity-0 cursor-pointer">
+                <img class="w-auto h-16 sm:w-auto sm:h-20 md:w-auto md:h-28" src="icons/trophy.png" alt="Projects">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl text-[#b2f8ff] glow font-bold my-6">Projects</h2> <div></div>
+            </div> <div class="col-span-1 hidden md:block"></div>    
+                <!--hidden-->       
+                <!-- SERENITY-->
+                <div class="col-span-7 project grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">AI Emotion Companion</h1>
+                        <p class="text-sm sm:text-base">Using <strong>Node.js</strong>, <strong>React</strong>, <strong>Vite</strong>, and <strong>AI APIs</strong>, we developed an AI emotion companion <strong>within 24 hours</strong> that could recognize and respond to human emotions. 
+                            The app was built with a <strong>privacy-first</strong> architecture to ensure secure handling of sensitive user data, 
+                            and presented to judges, receiving <strong>positive feedback</strong> for its innovation and clear, effective communication.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover pl-2" src="pics/serenity.png" alt="Screenshot of Carpooling website">
+                    </div>
+                </div>
+                <!--CARPOOLING-->
+                <div class="col-span-7 project grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Dashboarding Carpool Site</h1>
+                        <p class="text-sm sm:text-base">Using <strong>HTML</strong>, <strong>CSS</strong>, <strong>PHP</strong>, and <strong>MySQL</strong>, we designed a functional and accessible carpooling website aimed at reducing carbon emissions by <strong>25 to 50%</strong> per person.
+                             I delegated tasks and set deadlines that accelerated completion by <strong>77%</strong> ahead of schedule, while enabling ride sharing between hundreds of users and hosting hundreds of rides. 
+                             To maximize accessibility, I also researched and implemented a <strong>free launch method</strong>, allowing users to interact with the platform through any web browser.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover my-4 pl-2" src="pics/carpool.png" alt="Screenshot of Carpooling website">
+                    </div>
+                </div>
+                <!--RECEIPT-->
+                <div class="col-span-7 project grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Receipt System</h1>
+                        <p class="text-sm sm:text-base">Using <strong>Java</strong> and <strong>software engineering principles</strong>, I developed a receipt management system that organizes and analyzes personal spending.
+                             The system categorizes receipts, <strong>generates detailed reports</strong>, tracks payment methods through <strong>polymorphism</strong>, and incorporated robust <strong>error handling</strong> to ensure reliability.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover my-4 pl-2" src="pics/receipt.png" alt="Screenshot of Carpooling website">
+                    </div>
+                </div>
+                <!--ALACRITY-->
+                <div class="col-span-7 project grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Study-time Calculator</h1>
+                        <p class="text-sm sm:text-base">Using <strong>Python</strong> and <strong>Tkinter</strong>, we produced and applied <strong>diagnostic test data</strong> to help increase student organization and reduce stress. 
+                            <strong>Within 2 days</strong>, I <strong>learned</strong> Tkinter and <strong>taught</strong> it to my team, enabling the integration of a polished graphical user interface that complemented our program.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover my-4 pl-2" src="pics/alacrity.png" alt="Screenshot of Carpooling website">
+                    </div>
+                </div>
+
+            <!-- Academia Button -->
+            <div class="col-span-1 hidden md:block"></div>
+            <div data-aos="fly-r" data-aos-delay="500" id="academics" class="scroll-mt-24 col-span-6 bg-[#021d45] p-2 md:pl-80 slant-l flex justify-between opacity-0 cursor-pointer">
+                <div></div><h2 class="text-2xl sm:text-3xl md:text-4xl text-[#b2f8ff] glow font-bold my-6">Academia</h2>
+                <img class="w-auto h-16 sm:w-auto sm:h-20 md:w-auto md:h-28" src="icons/cap.png" alt="Graduation Cap">
+            </div>
+                <!--hidden-->
+                 <div class="col-span-7 academic opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                <div class="flex flex-col items-center">
+                    <div class="counter text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fly-l" data-aos-delay="500" data-target="4.2" data-decimals="1">0.00</div>
+                    <p class="opacity-0 text-sm sm:text-base md:text-lg" data-aos="fly-r" data-aos-delay="500">/4.3 CGPA</p>
+                </div>
+                </div>
+                <!-- Program -->
+                <div class="col-span-7 academic opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fly-l" data-aos-delay="500">Software Engineering</div>
+                        <p class="opacity-0 text-sm sm:text-base md:text-lg" data-aos="fly-r" data-aos-delay="500">at Ontario Tech University</p>
+                    </div>
+                </div>
+                <!-- Level -->
+                <div class="col-span-7 academic opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="flex flex-col items-center">
+                        <div class="counter text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fly-l" data-aos-delay="500" data-target="3" data-decimals="0" data-suffix="rd Year">0</div>
+                        <p class="opacity-0 text-sm sm:text-base md:text-lg" data-aos="fly-r" data-aos-delay="500">/5 Year Program</p>
+                    </div>
+                </div>
+                <!-- Year -->
+                <div class="col-span-7 academic opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="flex flex-col items-center">
+                        <div class="counter text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fly-l" data-aos-delay="500" data-target="2028" data-decimals="0">0</div>
+                        <p class="opacity-0 text-sm sm:text-base md:text-lg" data-aos="fly-r" data-aos-delay="500">Expected Graduation</p>
+                    </div>
+                </div>
+                <!-- Relevant Courses -->
+                <div class="col-span-7 academic opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold" data-aos="fly-l" data-aos-delay="500">Relevant Courses</div>
+                        <ul class="list-disc list-inside opacity-0 text-sm sm:text-base md:text-lg" data-aos="fly-r" data-aos-delay="500">
+                            <li>Intro to Programming</li>
+                            <li>Object Oriented Programming</li>
+                            <li>Data Structures</li>
+                            <li>Principles of Software Engineering</li>
+                            <li>Digital Systems & Computer Architecture</li>
+                            <li>Discrete Mathematics</li>
+                        </ul>
+                    </div>
+                </div>
+
+            <!-- Work Experience Button -->
+            <div data-aos="fly-l" data-aos-delay="500" id="works" class="scroll-mt-24 col-span-6 bg-[#021d45] p-2 md:pr-80 slant-r flex justify-between opacity-0 cursor-pointer">
+                <img class="w-auto h-16 sm:w-auto sm:h-20 md:w-auto md:h-28" src="icons/case.png" alt="Briefcase">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl text-[#b2f8ff] glow font-bold my-6">Work Experience</h2> <div></div>
+            </div> <div class="col-span-1 hidden md:block"></div>
+                <!--hidden-->
+                <!--Web Assistant-->
+                <div class="col-span-7 work opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden" data-aos="fly-d" data-aos-delay="500">
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold">Web & Digital Media Assistant</div>
+                        <p class="text-sm sm:text-base md:text-lg">at Ontario Tech University</p>
+                    </div>
+                </div>
+                <!-- EVENT-->
+                <div class="col-span-7 work grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Event Submission Form</h1>
+                        <p class="text-sm sm:text-base">Using <strong>SOAP API</strong>, <strong>PHP</strong>, and <strong>CSS</strong>, I developed a custom event submission form that automates uploads into the university’s CMS. 
+                            I also engineered an algorithm to parse and reformat large JSON event datasets, enabling automated re-uploads that met updated filters and specifications 
+                            with accuracy and efficiency.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover pl-2" src="pics/event.png" alt="Screenshot of the Event Submission Form">
+                    </div>
+                </div>
+                <!--TUITION-->
+                <div class="col-span-7 work grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Tuition Calculator</h1>
+                        <p class="text-sm sm:text-base">Utilized <strong>GitHub</strong>, <strong>CSS</strong>, <strong>HTML</strong>, <strong>JavaScript</strong> I developed and integrated client-requested features into the university’s live Tuition Calculator. 
+                            I conducted strenuous <strong>debugging</strong> to ensure the tool met production-level standards, with all approved changes successfully tested and pushed to the production environment.</p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover my-4 pl-2" src="pics/tuition.png" alt="Screenshot of Tuition Calculator">
+                    </div>
+                </div>
+                <!--Sobeys-->
+                <div class="col-span-7 work opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden" data-aos="fly-d" data-aos-delay="500">
+                    <div class="flex flex-col items-center">
+                        <div class="text-2xl sm:text-3xl md:text-4xl font-bold">Front-End Staff</div>
+                        <p class="text-sm sm:text-base md:text-lg">at Sobeys</p>
+                    </div>
+                </div>
+                <!--SOBEYS-->
+                <div class="col-span-7 work grid grid-cols-1 md:grid-cols-3 m-4 md:mr-16 opacity-0 transform -translate-y-4 transition-all duration-500 ease-out hidden">
+                    <div class="hidden md:block"></div>
+                    <div class="flex flex-col items-start" data-aos="fly-l" data-aos-delay="500">
+                        <h1 class="text-xl sm:text-2xl md:text-3xl font-bold">Front-End Staff</h1>
+                        <p class="text-sm sm:text-base">I efficiently retrieved and organized shopping carts to ensure availability for customers and <strong>improve overall store efficiency</strong>. 
+                            <strong>Trusted</strong> to work weekends due to my <strong>reliability</strong> and <strong>speed</strong>, 
+                            I consistently contributed to increased customer satisfaction while <strong>assisting teammates</strong> by completing tasks <strong>ahead of schedule</strong>. </p>
+                    </div>
+                    <div class="flex justify-center md:justify-end" data-aos="fly-r" data-aos-delay="500">
+                        <img class="w-64 sm:w-80 md:w-96 h-auto rounded-lg object-cover my-4 pl-2" src="pics/sobeys.jpg" alt="Sobeys logo">
+                    </div>
+                </div>
+
+            <!-- Resume Button -->
+            <div id="resume" class="scroll-mt-24 col-span-1 hidden md:block"></div>
+            <a href='ajay%20ramsaran.pdf' target='_blank' data-aos="fly-r" data-aos-delay="500" class="block mb-20 col-span-6 bg-[#021d45] p-2 md:pl-80 slant-l flex justify-between opacity-0 cursor-pointer">
+                <div></div><h2 class="text-2xl sm:text-3xl md:text-4xl text-[#b2f8ff] glow font-bold my-6 mr-8 md:mr-32">Resume</h2>
+                <img class="w-auto h-16 sm:w-auto sm:h-20 md:w-auto md:h-28" src="icons/resume.png" alt="Resume">
+            </a>
+
+
+        </div>
+
+
+
+    </body>
+    <script>
+        //NAME TYPING
+        document.addEventListener('DOMContentLoaded', function() {
+            var typed = new Typed('#typed-name', {
+                strings: ["Ajay<br>Ramsaran"],
+                startDelay: 1000,
+                typeSpeed: 35,
+                cursorChar: "_"
+             });
+         });
+
+
+         //ON SCROLL DELAY
+        AOS.init({
+            duration: 1000, // how long animations last
+            once: true      // animate only the first time
+        });
+
+         //NAVIGATION
+        document.addEventListener("DOMContentLoaded", () => {
+            const stickyNav = document.getElementById("stickyNav");
+            const hero = document.getElementById("hero");
+            const menuToggle = document.getElementById("menuToggle");
+            const navMenu = document.getElementById("navMenu");
+            const navLinks = navMenu.querySelectorAll("a");
+
+            // Fade nav in/out
+            window.addEventListener("scroll", () => {
+            const heroBottom = hero.offsetTop + hero.offsetHeight;
+            if (window.scrollY > heroBottom - 50) {
+                stickyNav.classList.remove("opacity-0", "pointer-events-none");
+                stickyNav.classList.add("opacity-100");
+            } else {
+                stickyNav.classList.add("opacity-0", "pointer-events-none");
+                stickyNav.classList.remove("opacity-100");
+            }
+            });
+
+            // Toggle dropdown with animation
+            menuToggle.addEventListener("click", () => {
+            if (navMenu.classList.contains("max-h-0")) {
+                navMenu.classList.remove("max-h-0");
+                navMenu.classList.add("max-h-96"); // adjust height if menu grows bigger
+            } else {
+                navMenu.classList.add("max-h-0");
+                navMenu.classList.remove("max-h-96");
+            }
+            });
+
+            // Collapse after selecting a link
+            navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                navMenu.classList.add("max-h-0");
+                navMenu.classList.remove("max-h-96");
+            });
+            });
+        });
+
+         //ROULETTE
+             const message = document.getElementById("skillMessage");
+
+            // Simple check for touch support
+            if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
+            message.textContent = "(hold to speed up)";
+            } else {
+            message.textContent = "(hover to speed up)";
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+            const wheel = document.getElementById("wheel");
+            const items = wheel.querySelectorAll(".item");
+
+            let current = 0;
+            let intervalId;
+            let intervalTime = 1000; // default speed
+
+            function render() {
+            items.forEach((item, i) => {
+                let offset = (i - current + items.length) % items.length;
+                if (offset > items.length / 2) offset -= items.length;
+
+                const scale = 1 - Math.abs(offset) * 0.15;
+                const translateX = offset * 160;
+                const zIndex = 10 - Math.abs(offset);
+
+                item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) scale(${scale})`;
+                item.style.zIndex = zIndex;
+                item.style.opacity = Math.abs(offset) > 3 ? 0 : 1;
+
+                const caption = item.querySelector("p");
+                if (caption) {
+                caption.style.display = offset === 0 ? "block" : "none";
+                }
+            });
+            }
+
+            function next() {
+            current = (current + 1) % items.length;
+            render();
+            }
+
+            function startInterval(time) {
+            clearInterval(intervalId);
+            intervalId = setInterval(next, time);
+            }
+
+            // Start default speed
+            startInterval(intervalTime);
+            render();
+
+            // Hover events to speed up
+            wheel.addEventListener('mouseenter', () => {
+            startInterval(500); // faster speed on hover
+            });
+
+            wheel.addEventListener('mouseleave', () => {
+            startInterval(intervalTime); // return to normal speed
+            });
+
+            //Mobile
+            wheel.addEventListener('touchstart', () => {
+            startInterval(500);
+            });
+            wheel.addEventListener('touchend', () => {
+            startInterval(intervalTime);
+            });
+
+        });
+
+
+        //DROPDOWNS
+        function animateCounter(el, duration = 1000) {
+        const target = parseFloat(el.getAttribute('data-target'));
+        const decimals = parseInt(el.getAttribute('data-decimals')) || 0;
+        const suffix = el.getAttribute('data-suffix') || ""; // read suffix
+        let current = 0;
+        const steps = duration / 30;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+            el.textContent = target.toFixed(decimals) + suffix;
+            clearInterval(timer);
+            } else {
+            el.textContent = current.toFixed(decimals) + suffix;
+            }
+        }, 30);
+        }
+
+
+        function setupDropdown(buttonId, itemClass) {
+            const btn = document.getElementById(buttonId);
+            const items = document.querySelectorAll(`.${itemClass}`);
+            let visible = false;
+
+            btn.addEventListener('click', () => {
+                visible = !visible;
+
+                if (visible) {
+                items.forEach((item, index) => {
+                    setTimeout(() => {
+                    item.classList.remove('hidden');
+                    setTimeout(() => {
+                        item.classList.remove('opacity-0', '-translate-y-4');
+
+                        // animate ALL counters inside item
+                        const counters = item.querySelectorAll('.counter');
+                        counters.forEach((counter, i) => {
+                        setTimeout(() => {
+                            counter.textContent = (counter.getAttribute('data-decimals') === "0") ? "0" : "0.0";
+                            animateCounter(counter, 1000);
+                        }, 500 + i * 200); // staggered animation
+                        });
+
+                    }, 20);
+                    }, index * 200);
+                });
+                } else {
+                items.forEach(item => {
+                    item.classList.add('hidden', 'opacity-0', '-translate-y-4');
+                    
+                    // reset counters on hide
+                    const counters = item.querySelectorAll('.counter');
+                    counters.forEach(counter => {
+                    const decimals = parseInt(counter.getAttribute('data-decimals')) || 0;
+                    const suffix = counter.getAttribute('data-suffix') || "";
+                    counter.textContent = (decimals === 0 ? "0" : "0.0") + suffix;
+    });
+                });
+                }
+            });
+        }
+        // Setup Dropdowns
+        setupDropdown('projects', 'project');
+        setupDropdown('academics', 'academic');
+        setupDropdown('works', 'work');
+
+    </script>
+
+</html>
