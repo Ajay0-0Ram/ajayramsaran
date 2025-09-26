@@ -15,7 +15,7 @@ AOS.init({
     once: true      // animate only the first time
 });
 
-    //NAVIGATION
+   // NAVIGATION
 document.addEventListener("DOMContentLoaded", () => {
     const stickyNav = document.getElementById("stickyNav");
     const hero = document.getElementById("hero");
@@ -23,35 +23,35 @@ document.addEventListener("DOMContentLoaded", () => {
     const navMenu = document.getElementById("navMenu");
     const navLinks = navMenu.querySelectorAll("a");
 
-    // Fade nav in/out
+    // Fade nav in/out after hero
     window.addEventListener("scroll", () => {
-    const heroBottom = hero.offsetTop + hero.offsetHeight;
-    if (window.scrollY > heroBottom - 50) {
-        stickyNav.classList.remove("opacity-0", "pointer-events-none");
-        stickyNav.classList.add("opacity-100");
-    } else {
-        stickyNav.classList.add("opacity-0", "pointer-events-none");
-        stickyNav.classList.remove("opacity-100");
-    }
+        const heroBottom = hero.offsetTop + hero.offsetHeight;
+        if (window.scrollY > heroBottom - 50) {
+            stickyNav.classList.remove("opacity-0", "pointer-events-none");
+            stickyNav.classList.add("opacity-100");
+        } else {
+            stickyNav.classList.add("opacity-0", "pointer-events-none");
+            stickyNav.classList.remove("opacity-100");
+        }
     });
 
-    // Toggle dropdown with animation
+    // Toggle dropdown smoothly
     menuToggle.addEventListener("click", () => {
-    if (navMenu.classList.contains("max-h-0")) {
-        navMenu.classList.remove("max-h-0");
-        navMenu.classList.add("max-h-96"); // adjust height if menu grows bigger
-    } else {
-        navMenu.classList.add("max-h-0");
-        navMenu.classList.remove("max-h-96");
-    }
+        if (navMenu.classList.contains("max-h-0")) {
+            navMenu.classList.remove("max-h-0");
+            navMenu.classList.add("max-h-96");
+        } else {
+            navMenu.classList.add("max-h-0");
+            navMenu.classList.remove("max-h-96");
+        }
     });
 
-    // Collapse after selecting a link
+    // Collapse menu after link click
     navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        navMenu.classList.add("max-h-0");
-        navMenu.classList.remove("max-h-96");
-    });
+        link.addEventListener("click", () => {
+            navMenu.classList.add("max-h-0");
+            navMenu.classList.remove("max-h-96");
+        });
     });
 });
 
