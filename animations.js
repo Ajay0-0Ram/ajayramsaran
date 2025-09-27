@@ -72,26 +72,30 @@ document.addEventListener("DOMContentLoaded", () => {
     let current = 0;
     let intervalId;
     let intervalTime = 1000; // default speed
-
+        
     function render() {
-    items.forEach((item, i) => {
-        let offset = (i - current + items.length) % items.length;
-        if (offset > items.length / 2) offset -= items.length;
+        const containerWidth = wheel.offsetWidth;
+        const spacing = containerWidth / 5; // adjust divisor for tighter/looser spacing
 
-        const scale = 1 - Math.abs(offset) * 0.15;
-        const translateX = offset * 160;
-        const zIndex = 10 - Math.abs(offset);
+        items.forEach((item, i) => {
+            let offset = (i - current + items.length) % items.length;
+            if (offset > items.length / 2) offset -= items.length;
 
-        item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) scale(${scale})`;
-        item.style.zIndex = zIndex;
-        item.style.opacity = Math.abs(offset) > 3 ? 0 : 1;
+            const scale = 1 - Math.abs(offset) * 0.15;
+            const translateX = offset * spacing; // responsive spacing
+            const zIndex = 10 - Math.abs(offset);
 
-        const caption = item.querySelector("p");
-        if (caption) {
-        caption.style.display = offset === 0 ? "block" : "none";
-        }
-    });
+            item.style.transform = `translate(-50%, -50%) translateX(${translateX}px) scale(${scale})`;
+            item.style.zIndex = zIndex;
+            item.style.opacity = Math.abs(offset) > 3 ? 0 : 1;
+
+            const caption = item.querySelector("p");
+            if (caption) {
+                caption.style.display = offset === 0 ? "block" : "none";
+            }
+        });
     }
+
 
     function next() {
     current = (current + 1) % items.length;
